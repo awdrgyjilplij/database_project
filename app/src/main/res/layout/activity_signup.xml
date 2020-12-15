@@ -1,0 +1,214 @@
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:paddingLeft="@dimen/activity_horizontal_margin"
+    android:paddingTop="@dimen/activity_vertical_margin"
+    android:paddingRight="@dimen/activity_horizontal_margin"
+    android:paddingBottom="@dimen/activity_vertical_margin"
+    tools:context=".SignupActivity">
+
+    <TextView
+        android:layout_marginTop="60dp"
+        android:id="@+id/reg_number1"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:padding="10dp"
+        android:text="Username:"
+        android:textColor="#000"
+        android:textSize="20dp" />
+    <EditText
+        android:layout_alignBottom="@+id/reg_number1"
+        android:layout_toRightOf="@+id/reg_number1"
+        android:id="@+id/reg_username"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:padding="10dp" />
+    <TextView
+        android:id="@+id/reg_number2"
+        android:layout_marginTop="5dp"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/reg_number1"
+        android:padding="10dp"
+        android:text="Password:"
+        android:textColor="#000"
+        android:textSize="20dp" />
+    <EditText
+        android:layout_alignBottom="@id/reg_number2"
+        android:layout_toRightOf="@+id/reg_number2"
+        android:id="@+id/reg_password"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:padding="10dp" />
+
+    <TextView
+        android:id="@+id/reg_number3"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/reg_number2"
+        android:layout_marginTop="5dp"
+        android:padding="10dp"
+        android:text="Name:"
+        android:textColor="#000"
+        android:textSize="20dp" />
+    <EditText
+        android:layout_alignBottom="@id/reg_number3"
+        android:layout_toRightOf="@+id/reg_number3"
+        android:id="@+id/reg_name"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:padding="10dp" />
+
+    <TextView
+        android:id="@+id/reg_number4"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/reg_number3"
+        android:layout_marginTop="5dp"
+        android:padding="10dp"
+        android:text="Birthday:"
+        android:textColor="#000"
+        android:textSize="20dp" />
+    <EditText
+        android:layout_alignBottom="@id/reg_number4"
+        android:layout_toRightOf="@+id/reg_number4"
+        android:id="@+id/reg_birthday"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:padding="10dp"
+        android:inputType="date"/>
+
+    <TextView
+        android:id="@+id/reg_number5"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/reg_number4"
+        android:layout_marginTop="5dp"
+        android:padding="10dp"
+        android:text="SocialID:"
+        android:textColor="#000"
+        android:textSize="20dp" />
+    <EditText
+        android:layout_alignBottom="@id/reg_number5"
+        android:layout_toRightOf="@+id/reg_number5"
+        android:id="@+id/reg_socialID"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:padding="10dp"
+        android:inputType="number"/>
+
+    <TextView
+        android:id="@+id/reg_number6"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/reg_number5"
+        android:layout_marginTop="5dp"
+        android:padding="10dp"
+        android:text="Hiredate:"
+        android:textColor="#000"
+        android:textSize="20dp" />
+    <EditText
+        android:layout_alignBottom="@id/reg_number6"
+        android:layout_toRightOf="@+id/reg_number6"
+        android:id="@+id/reg_hiredate"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:padding="10dp"
+        android:inputType="date"/>
+
+    <TextView
+        android:id="@+id/reg_number7"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/reg_number6"
+        android:layout_marginTop="5dp"
+        android:padding="10dp"
+        android:text="Gender:"
+        android:textColor="#000"
+        android:textSize="20dp" />
+    <EditText
+        android:layout_alignBottom="@id/reg_number7"
+        android:layout_toRightOf="@+id/reg_number7"
+        android:id="@+id/reg_gender"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:padding="10dp"/>
+
+    <TextView
+        android:id="@+id/reg_number8"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/reg_number7"
+        android:layout_marginTop="5dp"
+        android:padding="10dp"
+        android:text="DeptID:"
+        android:textColor="#000"
+        android:textSize="20dp" />
+    <EditText
+        android:layout_alignBottom="@id/reg_number8"
+        android:layout_toRightOf="@+id/reg_number8"
+        android:id="@+id/reg_deptID"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:padding="10dp"
+        android:inputType="number"/>
+
+    <TextView
+        android:id="@+id/reg_number9"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/reg_number8"
+        android:layout_marginTop="5dp"
+        android:padding="10dp"
+        android:text="Telephone:"
+        android:textColor="#000"
+        android:textSize="20dp" />
+    <EditText
+        android:layout_alignBottom="@id/reg_number9"
+        android:layout_toRightOf="@+id/reg_number9"
+        android:id="@+id/reg_telephone"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:padding="10dp"
+        android:inputType="phone"/>
+
+    <TextView
+        android:id="@+id/reg_number10"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/reg_number9"
+        android:layout_marginTop="5dp"
+        android:padding="10dp"
+        android:text="Email:"
+        android:textColor="#000"
+        android:textSize="20dp" />
+    <EditText
+        android:layout_alignBottom="@id/reg_number10"
+        android:layout_toRightOf="@+id/reg_number10"
+        android:id="@+id/reg_email"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:padding="10dp"
+        android:inputType="textEmailAddress"/>
+
+    <Button
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="确定注册"
+        android:id="@+id/reg_btn_sure"
+        android:layout_marginTop="38dp"
+        android:layout_below="@+id/reg_email"
+        android:layout_marginLeft="50dp"/>
+
+    <Button
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="返回登录"
+        android:id="@+id/reg_btn_ret"
+        android:layout_alignBottom="@id/reg_btn_sure"
+        android:layout_toRightOf="@id/reg_btn_sure"
+        android:layout_marginLeft="60dp"/>
+
+</RelativeLayout>
