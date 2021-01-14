@@ -16,7 +16,7 @@ public class ServerConnector {
                  final RecallFunction recall,
                  final String method, String address) {
         final String urlString = address + path;
-        new Thread(()-> {
+        new Thread(() -> {
             HttpURLConnection conn = null;
             PrintWriter writer = null;
             BufferedReader reader = null;
@@ -40,9 +40,9 @@ public class ServerConnector {
                     writer.close();
                 }
 
-                int responseCode=conn.getResponseCode(); // To Check for 200
+                int responseCode = conn.getResponseCode(); // To Check for 200
                 if (responseCode != HttpURLConnection.HTTP_OK) {
-                    Logger.d("RINE_debug", "responseCode error:"+responseCode);
+                    Logger.d("RINE_debug", "responseCode error:" + responseCode);
                 }
 
                 reader = new BufferedReader(new InputStreamReader(conn.getInputStream()));
@@ -56,11 +56,9 @@ public class ServerConnector {
                     recall.call(response.toString());
                 }
 
-            }
-            catch (Exception e) {
+            } catch (Exception e) {
                 e.printStackTrace();
-            }
-            finally {
+            } finally {
                 if (reader != null) {
                     try {
                         reader.close();

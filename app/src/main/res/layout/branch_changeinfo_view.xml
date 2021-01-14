@@ -1,0 +1,63 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:paddingLeft="@dimen/activity_horizontal_margin"
+    android:paddingTop="@dimen/activity_vertical_margin"
+    android:paddingRight="@dimen/activity_horizontal_margin"
+    android:paddingBottom="@dimen/activity_vertical_margin">
+
+    <TextView
+        android:layout_marginTop="60dp"
+        android:id="@+id/branch_changeinfo_number1"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:padding="10dp"
+        android:text="部门名称:"
+        android:textColor="#000"
+        android:textSize="20dp" />
+    <EditText
+        android:layout_alignBottom="@+id/branch_changeinfo_number1"
+        android:layout_toRightOf="@+id/branch_changeinfo_number1"
+        android:id="@+id/branch_changeinfo_name"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:padding="10dp" />
+    <TextView
+        android:id="@+id/branch_changeinfo_number2"
+        android:layout_marginTop="5dp"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/branch_changeinfo_number1"
+        android:padding="10dp"
+        android:text="部门描述:"
+        android:textColor="#000"
+        android:textSize="20sp" />
+    <EditText
+        android:layout_alignBottom="@id/branch_changeinfo_number2"
+        android:layout_toRightOf="@+id/branch_changeinfo_number2"
+        android:id="@+id/branch_changeinfo_description"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:padding="10dp" />
+    <TextView
+        android:id="@+id/branch_changeinfo_number3"
+        android:layout_marginTop="5dp"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/branch_changeinfo_number2"
+        android:padding="10dp"
+        android:text="经理编号:"
+        android:textColor="#000"
+        android:textSize="20sp" />
+    <EditText
+        android:layout_alignBottom="@id/branch_changeinfo_number3"
+        android:layout_toRightOf="@+id/branch_changeinfo_number3"
+        android:id="@+id/branch_changeinfo_managerId"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:padding="10dp" />
+
+</RelativeLayout>

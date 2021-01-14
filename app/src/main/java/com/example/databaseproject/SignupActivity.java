@@ -5,9 +5,7 @@ import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
-
-import androidx.appcompat.app.ActionBar;
-import androidx.preference.PreferenceFragmentCompat;
+import android.widget.RadioButton;
 
 import com.alibaba.fastjson.JSONObject;
 
@@ -20,7 +18,7 @@ public class SignupActivity extends BaseActivity
     private EditText birthdayEditText;
     private EditText socialIDEditText;
     private EditText hiredateEditText;
-    private EditText genderEditText;
+    private RadioButton genderButton_M;
     private EditText deptIDEditText;
     private EditText telephoneEditText;
     private EditText emailEditText;
@@ -29,8 +27,8 @@ public class SignupActivity extends BaseActivity
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_signup);
-        Button sureButton=findViewById(R.id.reg_btn_sure);
-        Button returnButton=findViewById(R.id.reg_btn_ret);
+        Button sureButton = findViewById(R.id.reg_btn_sure);
+        Button returnButton = findViewById(R.id.reg_btn_ret);
         sureButton.setOnClickListener(this);
         returnButton.setOnClickListener(this);
 
@@ -40,13 +38,14 @@ public class SignupActivity extends BaseActivity
         birthdayEditText = findViewById(R.id.reg_birthday);
         socialIDEditText = findViewById(R.id.reg_socialID);
         hiredateEditText = findViewById(R.id.reg_hiredate);
-        genderEditText = findViewById(R.id.reg_gender);
+        genderButton_M = findViewById(R.id.reg_gender_M);
         deptIDEditText = findViewById(R.id.reg_deptID);
         telephoneEditText = findViewById(R.id.reg_telephone);
         emailEditText = findViewById(R.id.reg_email);
     }
 
-    String name,birthday,socialID,hiredate,username,password,gender,deptID,telephone,email;
+    String name, birthday, socialID, hiredate, username, password, deptID, telephone, email;
+    Character gender;
 
     @Override
     public void onClick(View v) {
@@ -58,21 +57,40 @@ public class SignupActivity extends BaseActivity
             birthday = birthdayEditText.getText().toString();
             socialID = socialIDEditText.getText().toString();
             hiredate = hiredateEditText.getText().toString();
-            gender = genderEditText.getText().toString();
+            if (genderButton_M.isChecked())
+                gender = 'M';
+            else
+                gender = 'F';
             deptID = deptIDEditText.getText().toString();
             telephone = telephoneEditText.getText().toString();
             email = emailEditText.getText().toString();
 
-            //TODO: register
+            JSONObject postData = new JSONObject();
+            postData.put("username", username);
+            postData.put("password", password);
+            postData.put("name", name);
+            postData.put("birthday", birthday);
+            postData.put("socialID", socialID);
+            postData.put("hiredate", hiredate);
+            postData.put("gender", gender);
+            postData.put("deptID", deptID);
+            postData.put("telephone", telephone);
+            postData.put("email", email);
+            post("/signup", postData.toJSONString(), signupRecall);
 
-
-            Intent intent = new Intent(SignupActivity.this, LoginActivity.class);
-            startActivity(intent);
-        }
-        else{
+        } else {
             Intent intent = new Intent(SignupActivity.this, LoginActivity.class);
             startActivity(intent);
         }
     }
 
+    private final RecallFunction signupRecall = (s) -> {
+
+        JSONObject jsonParser = JSONObject.parseObject(s);
+
+        Intent intent = new Intent(SignupActivity.this, LoginActivity.class);
+        intent.putExtra("username", username);
+        intent.putExtra("password", password);
+        startActivity(intent);
+    };
 }
